@@ -1,0 +1,9 @@
+Module
+  name: game_test
+  description: Test
+  author: Guimaraes, Fabricio
+  website: https://github.com/edubart/otclient
+  sandboxed: true
+  scripts: [ test ]
+  @onLoad: init()
+  @onUnload: terminate()
