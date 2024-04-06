@@ -7,4 +7,5 @@ Obs: for question 5, 6 and 7
   -> Question 6 Unfortunately I couldn't do it, due to all the problems I encountered, I'm sorry about that
 
 Question 5 I just create a new spell and execute when the word "frigo" is typed on the game client chat, I tried to do as similar as possible, but as I can't compile the server, I couldn't change the way the spell is animated.
+
 Question 7 I made a new module and loaded on game start
