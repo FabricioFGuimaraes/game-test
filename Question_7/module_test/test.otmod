@@ -2,7 +2,7 @@ Module
   name: game_test
   description: Test
   author: Guimaraes, Fabricio
-  website: https://github.com/edubart/otclient
+  website: https://github.com/FabricioFGuimaraes/game-test
   sandboxed: true
   scripts: [ test ]
   @onLoad: init()

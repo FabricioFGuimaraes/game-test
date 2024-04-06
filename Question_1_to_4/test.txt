@@ -1,4 +1,4 @@
-Question 1
+-> Question 1
 
 local function releaseStorage(player)
 	player:setStorageValue(1000, -1)
@@ -11,7 +11,7 @@ function onLogout(player)
 	return true
 end
 
-Answer 1
+-> Answer 1
 
 -- CONSTANTS
 local STORAGE_ID = 1000
@@ -31,7 +31,7 @@ function onLogout(player)
 end
 
 ===========================================================================================================================
-Question 2
+-> Question 2
 
 function printSmallGuildNames(memberCount)
 	-- this method is supposed to print names of all guilds that have less than memberCount max members
@@ -41,7 +41,7 @@ function printSmallGuildNames(memberCount)
 	print(guildName)
 end
 
-Answer 2
+-> Answer 2
 
 function printSmallGuildNames(memberCount)
     -- this method is supposed to print names of all guilds that have less than memberCount max members
@@ -121,20 +121,20 @@ void Game::addItemToPlayer(const std::string& recipient, uint16_t itemId)
 void Game::addItemToPlayer(const std::string& recipient, uint16_t itemId)
 {
 	Player* player = g_game.getPlayerByName(recipient);
-	bool playerCreated = false;
+	bool playerCreated = false; // Setting a bool var if player was created inside this method
 	
 	if (!player) {
 		player = new Player(nullptr);
 		if (!IOLoginData::loadPlayerByName(player, recipient)) {
-			delete player;
+			delete player; // delete player pointer before return
 			return;
 		}
-		playerCreated = true;
+		playerCreated = true; // Means that player was created
 	}
 
 	Item* item = Item::CreateItem(itemId);
 	if (!item) {
-		if (playerCreated) delete player;
+		if (playerCreated) delete player; // here we just need delete the pointer if the player was created
 		return;
 	}
 
@@ -144,6 +144,6 @@ void Game::addItemToPlayer(const std::string& recipient, uint16_t itemId)
 		IOLoginData::savePlayer(player);
 	}
 	
-	if (playerCreated) delete player;
-    delete item;
+	if (playerCreated) delete player; // here we just need delete the pointer if the player was created
+    delete item; // delete the item pointer assuming that it was created inside this method
 }
